@@ -8,47 +8,53 @@ const generateProfile = (employeeData) => {
             <div class="card shadow-lg p-3 mb-5 bg-white rounded" style="width: 18rem;">
                 <div class="card-body bg-primary">
                     <h5 class="card-title text-light font-weight-bold"> ${manager.name} </h5>
-                    <p class="card-text text-light"><i class="fa-solid fa-mug-hot"></i> Manager</p>
+                    <p class="card-text text-light"><i class="fa-solid fa-glasses"></i> Manager</p>
                 </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">ID: ${manager.id} </li>
-                    <li class="list-group-item">Email: <a href="mailto:${manager.email}"> ${manager.email}</a></li>
-                    <li class="list-group-item">Office Number: ${manager.officeNumber} </li>
-                </ul>
-            </div>`;
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">ID: ${manager.id} </li>
+                <li class="list-group-item">Email: <a href="mailto:${manager.email}"> ${manager.email}</a></li>
+                <li class="list-group-item">Github: <a href="https://github.com/${manager.github}"> ${manager.github} </a></li>
+            </ul>
+            </div>
+        </div>`;
         pageHtml.push(managerCard);
     };
 
     const generateEngineer = (engineer) => {
 
         let engineerCard = `
-            <div class="card shadow-lg p-3 mb-5 bg-white rounded" style="width: 18rem;">
-            <div class="card-body bg-primary">
-                <h5 class="card-title text-light font-weight-bold"> ${engineer.name} </h5>
-                <p class="card-text text-light"><i class="fa-solid fa-glasses"></i>  Engineer</p>
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">ID: ${engineer.id} </li>
-                <li class="list-group-item">Email: <a href="mailto:${engineer.email}"> ${engineer.email}</a></li>
-                <li class="list-group-item">Github: <a href="https://github.com/${engineer.github}"> ${engineer.github} </a></li>
-            </ul>
-        </div>`;
+            <div class="card-columns flex-md-column">
+                <div class="card shadow-lg p-3 mb-5 bg-white rounded" style="width: 18rem;">
+                    <div class="card-body bg-primary">
+                        <h5 class="card-title text-light font-weight-bold"> ${engineer.name} </h5>
+                        <p class="card-text text-light"><i class="fa-solid fa-glasses"></i> Engineer</p>
+                    </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">ID: ${engineer.id} </li>
+                    <li class="list-group-item">Email: <a href="mailto:${engineer.email}"> ${engineer.email}</a></li>
+                    <li class="list-group-item">Github: <a href="https://github.com/${engineer.github}"> ${engineer.github} </a></li>
+                </ul>
+                </div>
+            </div>`;
         pageHtml.push(engineerCard);
     };
 
     const generateIntern = (intern) => {
 
-        let internCard = `<div class="card shadow-lg p-3 mb-5 bg-white rounded" style="width: 18rem;">
-            <div class="card-body bg-primary">
-                <h5 class="card-title text-light font-weight-bold"> ${intern.name} </h5>
-                <p class="card-text text-light"><i class="fa-solid fa-user-graduate"></i> Intern</p>
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">ID: ${intern.id} </li>
-                <li class="list-group-item">Email: <a href="mailto:${intern.email}"> ${intern.email}</a></li>
-                <li class="list-group-item">School: ${intern.school} </li>
-            </ul>
-        </div>`;
+        let internCard = `
+        <div class="card-columns flex-md-column">
+                <div class="card shadow-lg p-3 mb-5 bg-white rounded" style="width: 18rem;">
+                    <div class="card-body bg-primary">
+                        <h5 class="card-title text-light font-weight-bold"> ${intern.name} </h5>
+                        <p class="card-text text-light"><i class="fa-solid fa-glasses"></i> Intern</p>
+                    </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">ID: ${intern.id} </li>
+                    <li class="list-group-item">Email: <a href="mailto:${intern.email}"> ${intern.email}</a></li>
+                    <li class="list-group-item">Github: <a href="https://github.com/${intern.github}"> ${intern.github} </a></li>
+                </ul>
+                </div>
+            </div>`;
         pageHtml.push(internCard);
     };
 
