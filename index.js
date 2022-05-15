@@ -1,11 +1,12 @@
 const inquirer = require("inquirer");
+const fs = require("fs");
 
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
+const { stringify } = require("querystring");
 
 const staff = [];
-
 class StaffProfile {
     constructor() {}
 
@@ -112,10 +113,11 @@ class StaffProfile {
                     return this.getIntern();
                 } else if (employee.employeeType === "I don't want to add any more employees") {
                     console.log(`
-                    ========================================================
-                                Your team profile is ready!
-                    ========================================================`);
+                    =======================================================
+                            Congrats! Your team profile is ready!
+                    =======================================================`);
                 }
+                return staffDataOutput();
                 })      
             }
     getEngineer() {
@@ -254,3 +256,14 @@ class StaffProfile {
 
 const profile = new StaffProfile();
 profile.getManager();
+
+let teamPage = require('./src/page.template');
+
+function staffDataOutput(staff) {
+    fs.writeFile('./dist/index.html', teamPage , function(err) {
+        if (err) {
+            return console.log(err);
+        }
+        console.log("Success!");
+    });
+};
