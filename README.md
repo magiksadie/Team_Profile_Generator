@@ -16,7 +16,7 @@ This generator will upload cards of your team into an index.html file! Choose a 
 Pull code and run node index.js.
 
 ## Walk Through Video
-
+https://drive.google.com/file/d/1P7LgEWCTKOPOV44_1f9CxS4N-ADqVbMc/view
 ## License
 
 MIT
