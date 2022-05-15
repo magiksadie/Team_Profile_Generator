@@ -1,12 +1,13 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
+const {generateHTML} = require('./src/page.template');
 
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
-const { stringify } = require("querystring");
 
 const staff = [];
+let teamPage = "";
 class StaffProfile {
     constructor() {}
 
@@ -117,6 +118,7 @@ class StaffProfile {
                             Congrats! Your team profile is ready!
                     =======================================================`);
                 }
+                teamPage = generateHTML(staff);
                 return staffDataOutput();
                 })      
             }
@@ -256,8 +258,6 @@ class StaffProfile {
 
 const profile = new StaffProfile();
 profile.getManager();
-
-let teamPage = require('./src/page.template');
 
 function staffDataOutput(staff) {
     fs.writeFile('./dist/index.html', teamPage , function(err) {
